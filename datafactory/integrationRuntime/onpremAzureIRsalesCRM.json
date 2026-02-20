@@ -1,0 +1,6 @@
+{
+	"name": "onpremAzureIRsalesCRM",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

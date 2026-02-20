@@ -1,0 +1,9 @@
+{
+	"name": "salescrmdatafactory",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0f1fd937-6dfa-40e1-8af8-1d280d5854ec",
+		"tenantId": "4b3e1dad-6ba8-4747-8577-1af9e5a6db67"
+	}
+}

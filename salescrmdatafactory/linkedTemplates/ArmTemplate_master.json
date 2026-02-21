@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "salescrmdatafactory"
+		},
+		"FileLocation_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileLocation'"
+		},
+		"LS_adls_sink_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_adls_sink_csv'"
+		},
+		"FileLocation_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "D:\\AZURE\\CRM"
+		},
+		"FileLocation_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "Ganesh"
+		},
+		"LS_adls_sink_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://salescrmproject03.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "salescrmdatafactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_adls_sink_csv_accountKey": {
+						"value": "[parameters('LS_adls_sink_csv_accountKey')]"
+					},
+					"FileLocation_password": {
+						"value": "[parameters('FileLocation_password')]"
+					},
+					"LS_adls_sink_csv_properties_typeProperties_url": {
+						"value": "[parameters('LS_adls_sink_csv_properties_typeProperties_url')]"
+					},
+					"FileLocation_properties_typeProperties_host": {
+						"value": "[parameters('FileLocation_properties_typeProperties_host')]"
+					},
+					"FileLocation_properties_typeProperties_userId": {
+						"value": "[parameters('FileLocation_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

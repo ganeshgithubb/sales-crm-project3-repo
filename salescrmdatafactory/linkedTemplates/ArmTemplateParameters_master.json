@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "salescrmdatafactory"
+		},
+		"FileLocation_password": {
+			"value": ""
+		},
+		"LS_adls_sink_csv_accountKey": {
+			"value": ""
+		},
+		"FileLocation_properties_typeProperties_host": {
+			"value": "D:\\AZURE\\CRM"
+		},
+		"FileLocation_properties_typeProperties_userId": {
+			"value": "Ganesh"
+		},
+		"LS_adls_sink_csv_properties_typeProperties_url": {
+			"value": "https://salescrmproject03.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

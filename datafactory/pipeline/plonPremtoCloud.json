@@ -251,14 +251,7 @@
 			{
 				"name": "Succsess",
 				"type": "WebActivity",
-				"dependsOn": [
-					{
-						"activity": "Sales Team",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -279,14 +272,7 @@
 			{
 				"name": "Fail",
 				"type": "WebActivity",
-				"dependsOn": [
-					{
-						"activity": "Sales Team",
-						"dependencyConditions": [
-							"Failed"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
